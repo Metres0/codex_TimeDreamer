@@ -1,0 +1,128 @@
+:root {
+  --bg-1: #060a1d;
+  --bg-2: #0f1b3d;
+  --text: #ebf0ff;
+  --muted: #a3b0d8;
+  --accent: #8cb0ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+}
+
+body {
+  background: radial-gradient(circle at 30% 20%, #172d66 0%, var(--bg-1) 35%, #040611 100%);
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 280px 1fr 300px;
+}
+
+.lens-panel,
+.info-panel {
+  backdrop-filter: blur(12px);
+  background: rgba(7, 15, 40, 0.58);
+  border: 1px solid rgba(164, 185, 255, 0.2);
+  margin: 16px;
+  border-radius: 16px;
+  padding: 18px;
+  z-index: 2;
+}
+
+.lens-panel h1 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.lens-panel p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.lens-buttons {
+  display: grid;
+  gap: 8px;
+}
+
+.lens-btn {
+  border: 1px solid rgba(140, 176, 255, 0.4);
+  background: rgba(22, 34, 80, 0.6);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lens-btn:hover,
+.lens-btn.active {
+  background: rgba(111, 146, 244, 0.35);
+  border-color: rgba(189, 208, 255, 0.95);
+}
+
+.star-map {
+  position: relative;
+}
+
+#starSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  transition: transform 0.2s, fill 0.2s;
+}
+
+.node:hover circle {
+  transform: scale(1.08);
+}
+
+.center-node circle {
+  fill: #ffd86b;
+}
+
+.info-panel {
+  align-self: end;
+  margin-top: auto;
+}
+
+.info-panel h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.info-panel p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  #app {
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .info-panel {
+    grid-column: 1 / -1;
+  }
+}

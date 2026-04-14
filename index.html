@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>可切换中心的全屏星图</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <aside class="lens-panel" aria-label="视角镜片">
+        <h1>TimeDreamer 星图</h1>
+        <p>点击任意节点切换为新的中心。</p>
+        <div id="lensButtons" class="lens-buttons"></div>
+      </aside>
+
+      <section class="star-map" aria-label="内容星图">
+        <svg id="starSvg" role="img" aria-label="可交互星图"></svg>
+      </section>
+
+      <section class="info-panel" aria-live="polite">
+        <h2 id="centerTitle">-</h2>
+        <p id="centerDesc">-</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
